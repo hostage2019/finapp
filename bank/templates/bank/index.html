@@ -3,31 +3,62 @@
 
 {% block pageTitle %}Home{% endblock pageTitle %}
 {% block content %}
-
-<main class="container my-5">
-    <div class="row my-4 align-items-center" height=>
-		<div class="col-8">
-			<h1 class="display-5">Welcome to FinApp Bank</h1>
-			<p class="h5">We serve you better</p>
+<main class="container homebg">
+    <div class="row my-4 align-items-center ">
+		<div class="col-12 text-center my-5 py-5">
+			<h1 class="display-4 text-white"><b>Welcome to <span class="text-danger"><b>M</b></span>etro Bank</b></h1>
+			<p class="h5 text-white">We serve you better</p>
+            <a href="{% url "signIn" %}"><button class="display-6 bg-danger my-5">Get Started</button></a>
 		</div>
-		<div class="col-4 my-5 px-2 py-3 border border-info rounded-3">
-            <h2 class="h2 mb-4">Enter Account Details</h2>
-            <form action="{% url "signIn" %}" method="post">
-                {% csrf_token %}
-                <div class="form-group">
-                    {{ form.username.label_tag }}
-                    {{ form.username}}
-                </div>
-                <div class="form-group">
-                    {{ form.password.label_tag }}
-                    {{ form.password}}
-                </div>
-                <div class="row m-4">
-                    <button class="btn btn-info">Login</button>
-                </div>
-            </form>
-        </div>
-		</div>
+	</div>
 </main>
-
+<main class="container bg-white my-2 my-sm-5 py-5">
+    <div class="row">
+        <div class="text-center px-sm-5 px-1">
+            <h3 class="heading_color">This is Relationship Banking</h3>
+            <p>We believe that relationships are important and that everyone deserves a great experience throughout their financial journey. Our service is built upon human connection and real, long-standing relationships – whether it’s face to face, over the phone, online, or on our App.</p>
+        </div>
+    </div>
+    <div class="row text-center mt-2 mt-sm-5">
+        <div class="col-12 col-sm-4">
+            <h4 class="heading_color">Banking accounts</h4>
+            <p>From current accounts to savings and mortgages, our personal banking range is designed to cover everything you need.</p>
+            <button class="btn btn-warning mb-4">Get started</button>
+        </div>
+        <div class="col-12 col-sm-4">
+            <h4 class="heading_color">Business bank accounts</h4>
+            <p>From straightforward bank accounts to asset finance, we’ve got the know-how to help you with your needs.</p>
+            <button class="btn btn-warning mb-4">check it out</button>
+        </div>
+        <div class="col-12 col-sm-4">
+            <h4 class="heading_color">Insurance</h4>
+            <p>Our customers are at the heart of what we do, and we know how important it is for you to have peace of mind.</p>
+            <button class="btn btn-warning">Find out</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="text-center mt-2 mt-sm-4 px-5">
+            <h3 class="heading_color">Why Metro Bank?</h3>
+        </div>
+    </div>
+    <div class="row text-center mt-2 mt-sm-5">
+        <div class="col-12 col-sm-4">
+            <h4 class="heading_color">Relationship Banking</h4>
+            <p>We’re the first new high street bank in over 100 years. Our mark was made in London, but since then we’ve set up shop all across the capital and beyond.</p>
+            <button class="btn btn-warning mb-4">Get started</button>
+        </div>
+        <div class="col-12 col-sm-4">
+            <h4 class="heading_color">Our store opening hours</h4>
+            <p>Come and see us in store. Please check the latest opening hours for each of our stores before you visit us.</p>
+            <button class="btn btn-warning mb-4">check it out</button>
+        </div>
+        <div class="col-12 col-sm-4 text-center">
+            <h4 class="heading_color">Your pocket-sized bank
+            </h4>
+            <p>Log in to our app with your face or fingerprint, and manage your accounts with a tap. Plus, track your spending with our Insights feature.</p>
+            <button class="btn btn-warning mb-4">Find out</button>
+        </div>
+    </div>
+</main>
 {% endblock content %}

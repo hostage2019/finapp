@@ -1,28 +1,29 @@
 {% extends "base/base.html" %}
 
-{% block pageTitle %}FinApp | Dashboard {% endblock pageTitle %}
+{% block pageTitle %}etro | Dashboard {% endblock pageTitle %}
 
 {% block content %}
     <main class="container mb-5">
-        <h1 class="text-center display-6 pt-4">Dashboard</h1>
+        <!--<h1 class="text-center display-6 pt-4">Dashboard</h1>-->
         <div class="row">
-            <div class="col-4">
-                {% include "bank/user_menu.html" %}
+            <div class="col-12 col-md-4 mt-md-2 mb-md-5 px-md-2 py-md-3">
+                {% include "bank/menu.html" %}
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <div class="row justify-content-between">
-                    <div class="card col-3 my-4 border-info ">
-                        <div class="card-title h6 text-secondary pt-2">Current Balance:</div>
-                        <p class="text-success">GHC {{ request.user.currentBalance }} </p>
+                    <div class="card col-6 col-md-3 my-4 border-info ">
+                        <div class="card-title h6 text-secondary pt-2">Account No:</div>
+                        <p class="text-success"> {{ client.username }} </p>
+                        <div class="card-title h6 text-secondary">Current Balance:</div>
+                        <p class="text-success">&#163; {{ client.currentBalance }} </p>
                     </div>
-                    <div class="card col-3 my-4 border-info">
+                    <div class="card col-4 col-md-3 my-4 mybg d-block d-sm-none">
+                        <img src="{{ client.image.url }}" alt="" class="img-fluid rounded-circle">
+                    </div>
+                    <!--<div class="card col-4 col-md-3 my-4 border-info">
                         <div class="card-title h6 text-secondary pt-2">Current Balance:</div>
                         <p class="text-success">GHC 2000.00</p>
-                    </div>
-                    <div class="card col-3 my-4 border-info">
-                        <div class="card-title h6 text-secondary pt-2">Current Balance:</div>
-                        <p class="text-success">GHC 2000.00</p>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="row justify-content-between">
                     <h5 class="h5 text-center text-secondary my-3">Rescent Transactions</h5>
@@ -32,17 +33,17 @@
                                 <th scope="col" class="bg-dark text-white">#</th>
                                 <th scope="col" class="bg-dark text-white">Date</th>
                                 <th scope="col" class="bg-dark text-white">Time</th>
+                                <th scope="col" class="bg-dark text-white">Amount</th>
                                 <th scope="col" class="bg-dark text-white">Activity</th>
-                                <th scope="col" class="bg-dark text-white">Updated By</th>
                             </tr>
                         </thead>
                         <tbody >
                             {% for transaction in transactions  %}
-                            <tr>
+                            <tr class="fs-6">
                                 <th scope="col">{{ forloop.counter }} </th>
                                 <td scope="col">{{ transaction.date }} </td>
                                 <td scope="col">{{ transaction.time }}</td>
-                                <td scope="col">{{ transaction.amount }}</td>
+                                <td scope="col">&#163;{{ transaction.amount }}</td>
                                 <td scope="col">{{ transaction.activity }}</td>
                             </tr>
                             {% endfor %}

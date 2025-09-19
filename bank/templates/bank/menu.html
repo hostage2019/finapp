@@ -1,0 +1,54 @@
+<h1 class="h5 d-none d-md-block">MENU</h1>
+
+<div class="list-group border border-info mb-4 d-none d-md-block">
+    {% if request.user.is_superuser %}
+        <a href="{% url "admin_dashboard" %}" class="list-group-item list-group-item-primary list-group-item-action">Dashboard</a>
+        <a href="{% url "clients" %}" class="list-group-item list-group-item-primary list-group-item-action">Clients</a>
+        <a href="{% url "adminRegister" %}" class="list-group-item list-group-item-primary list-group-item-action">Register</a>
+        <a href="" class="list-group-item list-group-item-primary list-group-item-action">Daily Deposites</a>
+        <a href="" class="list-group-item list-group-item-primary list-group-item-action">Daily withdrawal</a>
+        <a href="{% url "accountType" %}" class="list-group-item list-group-item-primary list-group-item-action">Acount Type</a>
+        <a href="{% url "createAccountType" %}" class="list-group-item list-group-item-primary list-group-item-action"> Create Acount Type</a>
+        <a href="" class="list-group-item list-group-item-primary list-group-item-action">Logs</a>
+        
+    {% else %}
+    <a href="{% url 'client_dashboard' %}" class="list-group-item list-group-item-primary list-group-item-action">Dashboard</a>
+    <a href="{% url "client_profile" %}" class="list-group-item list-group-item-primary list-group-item-action">Profile</a>
+    <a href="{% url "transfer" %}" class="list-group-item list-group-item-primary list-group-item-action">Transfer</a>
+    <a href="{% url "payment_request" %}" class="list-group-item list-group-item-primary list-group-item-action">Payment request</a>
+    <a href="{% url "paybill" %}" class="list-group-item list-group-item-primary list-group-item-action">Pay Bill</a>
+    <a href="{% url "statement" request.user.id %}" class="list-group-item list-group-item-primary list-group-item-action">Statement</a>
+    <a href="{% url "loans" %}" class="list-group-item list-group-item-primary list-group-item-action">Loans</a>
+    <a href="{% url "fixed_deposit" %}" class="list-group-item list-group-item-primary list-group-item-action">Fixed deposit</a>
+    {% endif %}
+</div>
+
+  <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="list-group border border-info mb-4">
+            {% if request.user.is_superuser %}
+                <a href="{% url "admin_dashboard" %}" class="list-group-item list-group-item-primary list-group-item-action">Dashboard</a>
+                <a href="{% url "clients" %}" class="list-group-item list-group-item-primary list-group-item-action">Clients</a>
+                <a href="{% url "adminRegister" %}" class="list-group-item list-group-item-primary list-group-item-action">Register</a>
+                <a href="" class="list-group-item list-group-item-primary list-group-item-action">Daily Deposites</a>
+                <a href="" class="list-group-item list-group-item-primary list-group-item-action">Daily withdrawal</a>
+                <a href="{% url "accountType" %}" class="list-group-item list-group-item-primary list-group-item-action">Acount Type</a>
+                <a href="{% url "createAccountType" %}" class="list-group-item list-group-item-primary list-group-item-action"> Create Acount Type</a>
+                <a href="" class="list-group-item list-group-item-primary list-group-item-action">Logs</a>
+            {% else %}
+                <a href="{% url 'client_dashboard' %}" class="list-group-item list-group-item-primary list-group-item-action">Dashboard</a>
+                <a href="{% url "client_profile" %}" class="list-group-item list-group-item-primary list-group-item-action">Profile</a>
+                <a href="{% url "transfer" %}" class="list-group-item list-group-item-primary list-group-item-action">Transfer</a>
+                <a href="{% url "payment_request" %}" class="list-group-item list-group-item-primary list-group-item-action">Payment request</a>
+                <a href="{% url "paybill" %}" class="list-group-item list-group-item-primary list-group-item-action">Pay Bill</a>
+                <a href="{% url "statement" request.user.id %}" class="list-group-item list-group-item-primary list-group-item-action">Statement</a>
+                <a href="{% url "loans" %}" class="list-group-item list-group-item-primary list-group-item-action">Loans</a>
+                <a href="{% url "fixed_deposit" %}" class="list-group-item list-group-item-primary list-group-item-action">Fixed deposit</a>
+            {% endif %}
+        </div>
+    </div>
+  </div>

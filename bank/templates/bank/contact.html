@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block pageTitle %}Home{% endblock pageTitle %}
+
+{% block content %}
+<main class="container">
+    <h3 class="text-white text-center my-4 my-sm-5">Send us message for any enquiry</h3>   
+</main>
+
+<main class="container">
+    <form action="" method='post' class="text-center col-12 col-sm-6 m-auto">
+        {% csrf_token %}
+        {{form}}
+        <button class="btn btn-danger mb-3 px-5">Send</button>
+    </form>
+</main>
+
+{% endblock content %}
+
+
+
+
+

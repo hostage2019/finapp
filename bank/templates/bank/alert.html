@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block pageTitle %}Home{% endblock pageTitle %}
+
+{% block content %}
+<main class="container text-center"  >
+    <div class="d-flex justify-content-center align-center pt-5 my-5">
+        <h5 class="text-white text-center mt-4 my-sm-5">{{alert}}</h3> 
+        
+    </div>
+    <a href="{% url "client_dashboard" %}"><button class="btn btn-warning mb-5">Okay</button></a>
+      
+</main>
+
+
+
+{% endblock content %}
+
+
+
+
+

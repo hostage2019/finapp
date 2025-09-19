@@ -6,20 +6,20 @@
     <main class="container mb-5">
         <h1 class="text-center display-6 pt-4">Dashboard</h1>
         <div class="row">
-            <div class="col-4">
-                {% include "bank/admin_menu.html" %}
+            <div class="col-12 col-md-4">
+                {% include "bank/menu.html" %}
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8 px-4 px-md-2">
                 <div class="row justify-content-between">
-                    <div class="card col-3 my-4 border-info ">
+                    <div class="card col-4 col-md-3  my-1 my-md-4 border-info ">
                         <div class="card-title h6 text-secondary pt-2">Number of Clients:</div>
                         <p class="text-success">{{ clients.count }} </p>
                     </div>
-                    <div class="card col-3 my-4 border-info">
+                    <div class="card col-4 col-md-3  my-1 my-md-4 border-info">
                         <div class="card-title h6 text-secondary pt-2">Daily deposit:</div>
                         <p class="text-success">GHC 4500.00</p>
                     </div>
-                    <div class="card col-3 my-4 border-info">
+                    <div class="card col-4 col-md-3  my-1 my-md-4 border-info">
                         <div class="card-title h6 text-secondary pt-2">Daily withdrawal:</div>
                         <p class="text-success">GHC 2000.00</p>
                     </div>

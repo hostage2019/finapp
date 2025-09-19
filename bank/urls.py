@@ -14,4 +14,11 @@ urlpatterns = [
     path('client_profile/', views.clientProfileView, name='client_profile'),
     path('statement/<int:id>/', views.statementView, name='statement'),
     path('transfer/', views.transferView, name='transfer'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contactView, name='contact'),
+    path('client_details/<int:id>/', views.clientDetailView, name='client_details'),
+    path('payment_request/', views.paymentRequestView, name='payment_request'),
+    path('paybill/', views.paybillView, name='paybill'),
+    path('loans/', views.loansView, name='loans'),
+    path('fixed_deposit/', views.fixedDepositView, name='fixed_deposit'),
 ]

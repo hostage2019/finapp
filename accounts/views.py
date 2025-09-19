@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from accounts.forms import UserLoginForm, AdminUserRegisterForm
+from accounts.forms import UserLoginForm, AdminUserRegisterForm, AdminUserEditForm
+from .models import CustomUser
 
 # Create your views here.
 def signInView(request):
@@ -35,16 +36,17 @@ def adminRegisterView(request):
         'form': form,
     }
     if request.method == 'POST':
-        form = AdminUserRegisterForm(request.POST)
+        form = AdminUserRegisterForm(request.POST, request.FILES)  # Include request.FILES
         if form.is_valid():
             client = form.save(commit=False)
-            client.set_password(request.POST['password'])
+            client.set_password(form.cleaned_data['password'])  # Use cleaned_data to get the password
             client.save()
             messages.success(request,  'Client registered Successfully.')
             return redirect('clients')
         else:
             context['form'] = form
             messages.error(request, 'Client not registered.')
+            print(form.errors)  # Print form errors to debug
             return render(request, 'accounts/admin_register.html', context)
     else:  
         return render(request, 'accounts/admin_register.html', context)
@@ -53,3 +55,21 @@ def adminRegisterView(request):
 def signOutView(request):
     logout(request)
     return redirect('home')
+
+def editClientView(request, id=None):
+
+    form = AdminUserEditForm(instance=CustomUser.objects.get(id=id))
+    context = {
+        'form':form,
+        'edit':True,
+    }
+    if request.method == "POST":
+        form = AdminUserEditForm(request.POST, request.FILES, instance=CustomUser.objects.get(id=id))
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Client update succesfull')
+            return redirect('clients')
+        else:
+            return render(request, 'accounts/admin_register.html', context)  
+    else:
+        return render(request, 'accounts/admin_register.html', context)

@@ -6,10 +6,10 @@
     <main class="container mb-5">
         <h1 class="text-center display-6 pt-4">Dashboard</h1>
         <div class="row">
-            <div class="col-4">
-                {% include "bank/admin_menu.html" %}
+            <div class="col-12 col-md-4 mt-md-2 mb-md-5 px-md-2 py-md-3">
+                {% include "bank/menu.html" %}
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <div class="row justify-content-between">
                     <h5 class="h5 text-center text-secondary my-3">Clients</h5>
                     <table class="table table-striped table-info table-hover">
@@ -20,6 +20,7 @@
                                 <th scope="col" class="bg-dark text-white">Middle Name</th>
                                 <th scope="col" class="bg-dark text-white">Last Name</th>
                                 <th scope="col" class="bg-dark text-white">Account Number</th>
+                                <th scope="col" class="bg-dark text-white">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,6 +31,7 @@
                                 <td scope="col">{{ client.middle_name }}</td>
                                 <td scope="col">{{ client.last_name }}</td>
                                 <td scope="col">{{ client.username }}</td>
+                                <td scope="col"><a href="{% url "client_details" client.id %}">Details</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>

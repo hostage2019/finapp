@@ -1,0 +1,42 @@
+{% extends "base/base.html" %}
+{% block pageTitle %} Transfer | FinApp{% endblock pageTitle %}
+
+{% block content %}
+<main class="container">
+    <div class="row justify-content-start">
+        <p class="display-6 text-center">Payment Request</p>
+        <div class="col-12 col-md-4 mt-md-2 mb-md-5 px-md-2 py-md-3">
+            {% include "bank/menu.html" %}
+        </div>
+        <div class="col-12 col-md-4 mt-2 mb-5 px-2 py-3 ">
+            <h1 class="h5 mb-1">Transfer</h1>
+            <form action="" method="post" class="p-3 border border-info rounded-3">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            {{ form.amount.label_tag }}
+                            {{ form.amount }}
+                            {{ form.activity.label_tag }}
+                            {{ form.activity }}
+                            {{ form.updatedBy.label_tag }}
+                            {{ form.updatedBy }}
+                            {{ form.user.label_tag }}
+                            {{ form.user }}
+                            {{ form.recipient.label_tag }}
+                            {{ form.recipient}}
+                            {{ form.date.label_tag }}
+                            {{ form.date }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <button class="btn btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock content %}
+
+

@@ -1,50 +1,50 @@
 {% extends "base/base.html" %}
-{% block pageTitle %} Deposite | FinApp{% endblock pageTitle %}
+{% block pageTitle %} Profile | FinApp{% endblock pageTitle %}
 
 {% block content %}
 <main class="container">
     <div class="row justify-content-start">
         <p class="display-6 text-center">Profile</p>
-        <div class="col-4 mt-2 mb-5 px-2 py-3">
-            {% include "bank/user_menu.html" %}
+        <div class="col-12 col-md-4 mt-md-2 mb-md-5 px-md-2 py-md-3">
+            {% include "bank/menu.html" %}
         </div>
-        <div class="col-8 mt-2 mb-5 px-2 py-3 ">
+        <div class="col-12 col-md-8 mt-2 mb-5 px-2 py-3 ">
             <h1 class="h5 mb-1">Profile</h1>
             <div class="row ps-3">
-                <div class="col-6 ">
+                <div class="col-12 col-md-6 ">
                     <div class="row p-2">
                         <div class="col-5 bg-dark text-white p-2 border border-dark rounded-start">First Name </div>
-                        <div class="col-6 p-2 border rounded-end border-dark">{{ request.user.first_name | title }} </div>
+                        <div class="col-6 p-2 border rounded-end border-dark">{{ client.first_name | title }} </div>
                     </div>
                     <div class="row p-2">
                         <div class="col-5 bg-dark text-white p-2 border border-dark rounded-start">Middle Name </div>
-                        <div class="col-6 p-2 border rounded-end border-dark">{{ request.user.middle_name | title }} </div>
+                        <div class="col-6 p-2 border rounded-end border-dark">{{ client.middle_name | title }} </div>
                     </div>
                     <div class="row p-2">
                         <div class="col-5 bg-dark text-white p-2 border border-dark rounded-start">Last Name </div>
-                        <div class="col-6 p-2 border rounded-end border-dark">{{ request.user.last_name | title }} </div>
+                        <div class="col-6 p-2 border rounded-end border-dark">{{ client.last_name | title }} </div>
                     </div>
                     <div class="row p-2">
                         <div class="col-5 bg-dark text-white p-2 border border-dark rounded-start">Email </div>
-                        <div class="col-6 p-2 border rounded-end border-dark">{{ request.user.email | title }} </div>
+                        <div class="col-6 p-2 border rounded-end border-dark">{{ client.email | title }} </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <div class="row p-2">
                         <div class="col-5 bg-dark text-white p-2 border border-dark rounded-start">Account No </div>
-                        <div class="col-6 p-2 border rounded-end border-dark">{{ request.user.username | title }} </div>
+                        <div class="col-6 p-2 border rounded-end border-dark">{{ client.username | title }} </div>
                     </div>
                     <div class="row p-2 ">
                         <div class="col-5 bg-dark text-white p-2 border border-dark rounded-start">Account Type </div>
-                        <div class="col-6 p-2  border rounded-end border-dark">{{ request.user.accType | title }} </div>
+                        <div class="col-6 p-2  border rounded-end border-dark">{{ client.accType | title }} </div>
                     </div>
                     <div class="row p-2">
                         <div class="col-5 bg-dark text-white p-2 border border-dark rounded-start">Current Balance </div>
-                        <div class="col-6 p-2 border rounded-end border-dark"> GHC {{ request.user.currentBalance | title }} </div>
+                        <div class="col-6 p-2 border rounded-end border-dark">&#163;{{ client.currentBalance | title }} </div>
                     </div>
                     <div class="row p-2">
                         <div class="col-5 bg-dark text-white p-2 border border-dark  rounded-start">Date of Birth </div>
-                        <div class="col-6 p-2 border rounded-end border-dark">{{ request.user.birth_date | title }} </div>
+                        <div class="col-6 p-2 border rounded-end border-dark">{{ client.birth_date | title }} </div>
                     </div>
                 </div>
             </div>

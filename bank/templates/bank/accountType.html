@@ -6,10 +6,10 @@
     <main class="container mb-5">
         <h1 class="text-center display-6 pt-4">Account Type</h1>
         <div class="row">
-            <div class="col-4">
-                {% include "bank/admin_menu.html" %}
+            <div class="col-12 col-md-4">
+                {% include "bank/menu.html" %}
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <div class="row justify-content-between">
                     <table class="table table-striped table-info table-hover mt-4">
                         <thead>
@@ -23,7 +23,7 @@
                         <tbody >
                             {% for accountType in accountTypes  %}
                             <tr>
-                                <th scope="col">1</th>
+                                <th scope="col">{{ forloop.counter }} </th>
                                 <td scope="col">{{ accountType.accTypeName }} </td>
                                 <td scope="col">{{ accountType.accTypeName }}</td>
                                 <td scope="col">{{ accountType.accTypeName }}</td>

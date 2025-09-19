@@ -1,0 +1,18 @@
+.bg-warning{
+    background-color: aqua;
+}
+
+.mybg{
+    background-color: rgb(15, 18, 177) !important;
+}
+
+.homebg{
+    background-image: url('../images/finbg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.heading_color{
+    color: rgb(10, 3, 78) !important;
+}
